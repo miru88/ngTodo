@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { EMPTY, exhaustAll,of } from 'rxjs';
-import { map, mergeMap, catchError } from 'rxjs/operators';
+import { EMPTY, exhaustAll,of, tap } from 'rxjs';
+import { map, switchMap, catchError } from 'rxjs/operators';
 import {HttpService} from '../http/http.service';
 import * as todoActions from './store/'
 
@@ -11,7 +11,7 @@ export class TodoEffects {
 
     loadTodos$ = createEffect(() => 
     this.actions$.pipe(ofType(todoActions.getTodos),
-    mergeMap(() => {
+    switchMap(() => {
         return this.httpService
         .fetchTodos(3)
         .pipe(map((todos) => todoActions.getTodosSuccess({todos})),

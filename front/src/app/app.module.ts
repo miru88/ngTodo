@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToDoComponent } from 'src/app/to-do/to-do.component';
 import { UserComponent} from './user/user.component'
@@ -18,7 +18,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools'
 import { userReducer } from './user/store/user.reducers';
 import { todoReducer } from './to-do/store/to-do.reducer';
 import { EffectsModule } from '@ngrx/effects';
-
+import { TodoEffects } from './to-do/to-do.effects';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +46,8 @@ import { EffectsModule } from '@ngrx/effects';
     MatCheckboxModule,
     MatFormFieldModule,
     StoreModule.forRoot({user: userReducer,todos: todoReducer}),
-    EffectsModule.forRoot([])
+    EffectsModule.forRoot([TodoEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

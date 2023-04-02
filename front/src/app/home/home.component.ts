@@ -19,8 +19,8 @@ export class HomeComponent {
   }
   
  ngOnInit() {
-    this.todos = this.httpService.fetchTodos(1).subscribe(
-      (body: Todo[]) => {this.todos = body;});
+    // this.todos = this.httpService.fetchTodos(1).subscribe(
+    //   (body: Todo[]) => {this.todos = body;});
 
     // this.user = this.httpService.fetchUser(1).subscribe(
     //   (body) => {this.user = body;}
@@ -29,16 +29,16 @@ export class HomeComponent {
   }
 
 
-  onEnterKey(event: any){
-    this.value = event.target.value;
-    if(this.value)
-    {
-      this.todos = this.httpService.fetchTodos(this.value).subscribe(
-        (body: Todo[]) => {this.todos = body;});
+  // onEnterKey(event: any){
+  //   this.value = event.target.value;
+  //   if(this.value)
+  //   {
+  //     this.todos = this.httpService.fetchTodos(this.value).subscribe(
+  //       (body: Todo[]) => {this.todos = body;});
       
-    //   this.user = this.httpService.fetchUser(this.value).subscribe(
-    //   (body) => {this.user = body;}
-    // );
-    }
-  }
+  //   //   this.user = this.httpService.fetchUser(this.value).subscribe(
+  //   //   (body) => {this.user = body;}
+  //   // );
+  //   }
+  // }
 }

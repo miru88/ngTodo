@@ -17,8 +17,8 @@ export class ToDoComponent {
   }
 
   ngOnInit() {
-    this.todos$ = this.store.pipe(select(todoSelectors.selectTodosAll));
+    
     this.store.dispatch(todoActions.getTodos());
-
+    this.todos$ = this.store.pipe(select(todoSelectors.selectTodosAll));
   }
 }

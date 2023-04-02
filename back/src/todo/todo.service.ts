@@ -13,6 +13,7 @@ export class TodoService{
     }
 
     async findUserTodos(id:number): Promise<Todo[]>{
+        console.log('FOUND THEM TODOS');
         return await this.todoRepository.find({
             where: {
                 userid: id
