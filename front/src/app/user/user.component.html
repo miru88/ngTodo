@@ -1,0 +1,19 @@
+
+<mat-card class="example-card">
+  <div>Current Count: {{ username$ | async }}</div>
+  <div>Current Count: {{ firstname$ | async }}</div>
+  <div>Current Count: {{ lastname$ | async }}</div>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <!-- <mat-card-title>User: {{user$.userName | async}}</mat-card-title>
+      <mat-card-subtitle>{{user$.firstName | async}}, {{user$.lastName | async}}</mat-card-subtitle> -->
+      
+    </mat-card-header>
+    
+    <mat-card-content>
+      <p>
+        User information here
+      </p>
+    </mat-card-content>
+  
+  </mat-card>

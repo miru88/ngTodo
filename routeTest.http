@@ -1,0 +1,58 @@
+POST http://localhost:3000/todo/create
+Content-Type: application/json
+
+{
+    "message": "SKKRRRRRRT",
+    "userid": 1
+}
+#######
+
+GET http://localhost:3000/todo
+
+
+#####
+GET http://localhost:3000/user
+
+######
+POST http://localhost:3000/user/create
+Content-Type: application/json
+
+{
+    "firstname": "ME",
+    "lastname": "ME2",
+    "username": "ME3",
+    "password": "password"
+}
+
+#####
+
+GET http://localhost:3000/user/3
+
+
+####
+
+DELETE http://localhost:3000/user/11
+
+#####
+
+PATCH http://localhost:3000/user/1
+Content-Type: application/json
+
+{
+    "username": "superman"
+}
+
+
+#####
+
+PATCH http://localhost:3000/todo/1
+Content-Type: application/json
+
+{
+    "message": "OMG REEEE",
+    "done": true
+}
+
+#####
+
+GET http://localhost:3000/todo/1
