@@ -19,15 +19,19 @@ import { userReducer } from './user/store/user.reducers';
 import { todoReducer } from './to-do/store/to-do.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { TodoEffects } from './to-do/to-do.effects';
+import { PathFinderComponent } from './path-finder/path-finder.component';
+import {PathFinderModule} from './path-finder/path-finder.module'
 @NgModule({
   declarations: [
     AppComponent,
     ToDoComponent,
     UserComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    PathFinderComponent
   ],
   imports: [
+    PathFinderModule,
     StoreModule,
     HomeModule,
     BrowserModule,
@@ -35,6 +39,7 @@ import { TodoEffects } from './to-do/to-do.effects';
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
       {path: 'home', component: HomeComponent},
+      {path: 'pathFinder', component: PathFinderComponent},
       {path: '', component: HomeComponent},
 
     ]),

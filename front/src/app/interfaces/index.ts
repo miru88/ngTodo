@@ -19,3 +19,10 @@ export interface AppState{
     user: User,
     todos: Todo[]
 }
+
+export interface Cell{
+    isWall: boolean,
+    visited: boolean,
+    isStart: boolean,
+    isEnd: boolean
+}
