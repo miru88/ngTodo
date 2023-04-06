@@ -2,7 +2,7 @@
 <div class = "grid">
 
     <div class = "horzContainer" *ngFor = "let row of grid; let i = index">
-        <div class = "cell" *ngFor = "let cell of row; let j = index" [id] = "'cell-' + i + '-' + j">{{i}},{{j}}</div>
+        <div class = "cell" *ngFor = "let cell of row; let j = index" [id] = "'cell-' + i + '-' + j" (click) = "onClick($event)">{{i}},{{j}}</div>
     </div>
     <button (click) = "onStart()">Start</button>
     <button (click) = "onReset()">Reset</button>

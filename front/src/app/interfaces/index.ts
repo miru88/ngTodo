@@ -21,6 +21,8 @@ export interface AppState{
 }
 
 export interface Cell{
+    x: number,
+    y: number,
     isWall: boolean,
     visited: boolean,
     isStart: boolean,
