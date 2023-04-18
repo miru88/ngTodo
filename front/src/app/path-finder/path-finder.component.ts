@@ -2,14 +2,17 @@ import { Component, ElementRef,Inject, OnInit  } from '@angular/core';
 import {Cell} from '../interfaces/index'
 import { DOCUMENT } from '@angular/common'; 
 import {fromEvent, Observable} from 'rxjs';
+import * as helpers from './index'
 @Component({
   selector: 'app-path-finder',
   templateUrl: './path-finder.component.html',
   styleUrls: ['./path-finder.component.scss']
 })
 export class PathFinderComponent implements OnInit{
-    clickObservable: Observable<Event> = fromEvent(document,'click');
-    lastMaze: Cell[][] = new Array();
+    mouseDownObservable: Observable<Event> = fromEvent(document,'mousedown');
+    mouseUpObservable: Observable<Event> = fromEvent(document,'mouseup');
+
+    lastMaze: Cell[] = new Array();
     paintWall: boolean = false;
     paintStart: boolean = false;
     paintEnd: boolean = false;
@@ -20,45 +23,52 @@ export class PathFinderComponent implements OnInit{
     endCell: Cell|null = null;
     solution: Cell[]|null = null;
 
-    ROWS:number = 15;
-    COLS:number = 25;
-    grid: Cell[][] = new Array(this.ROWS).fill(new Array(this.COLS).fill({"x": -1,
-                                                                          "y": -1,
-                                                                          "visited": false,
-                                                                          "isWall": false,
-                                                                          "isStart": false,
-                                                                          "isEnd": false}));
+    ROWS:number = 5;
+    COLS:number = 10;
+    grid: Cell[] = new Array(this.COLS * this.ROWS).fill({"x": -1,
+                                                          "y": -1,
+                                                          "visited": false,
+                                                          "isWall": false,
+                                                          "isStart": false,
+                                                          "isEnd": false});
     // constructor(@Inject(DOCUMENT) document: Document){ }
 
-  onStart() {
-    console.log("start");
-    
-  }
-  onReset() {
-    console.log("reset");
-  }
-  onRepeat() {
-    console.log("repeat");
-  }
-  onClick(event: any){
-    let target = event.target;
-    let square = document.getElementById(target.id);
-    var bgColor = 'red';
-    if(square){
-      square.style.backgroundColor = bgColor;
+  
+
+  ngOnInit(): void {
+    this.subscribeToMouseDownObservable();
+    this.subscribeToMouseUpObservable();
+
+    for (let col in this.grid) {
+      let j = parseInt(col) % this.COLS;
+      this.grid[col] = {...this.grid[col], x: parseInt(col), y: j }
     }
 
 
   }
-
-  ngOnInit(): void {
-    this.subscribeToObservable();
-  }
-  private subscribeToObservable() {
-    this.clickObservable.subscribe(() => { 
-    console.log(`The dom has been clicked!`);
+  private subscribeToMouseDownObservable() {
+    this.mouseDownObservable.subscribe(() => { 
+    if (!this.mouseDown){
+      this.mouseDown = true;
+      
+    }
+  
   })
-}
+
+  }
+
+  private subscribeToMouseUpObservable() {
+    this.mouseUpObservable.subscribe(() => { 
+    if (this.mouseDown){
+      this.mouseDown = false;
+    }
+    
+  })
+
+  }
+
+
+
   ngAfterViewInit() {
     
   }

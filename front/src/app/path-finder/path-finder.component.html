@@ -1,10 +1,8 @@
 
-<div class = "grid">
+<div class = "grid" style = "width: 100vw; height: 100vh;">
 
-    <div class = "horzContainer" *ngFor = "let row of grid; let i = index">
-        <div class = "cell" *ngFor = "let cell of row; let j = index" [id] = "'cell-' + i + '-' + j" (click) = "onClick($event)">{{i}},{{j}}</div>
-    </div>
-    <button (click) = "onStart()">Start</button>
-    <button (click) = "onReset()">Reset</button>
-    <button (click) = "onRepeat()">Repeat</button>
+    <div class = "cell" *ngFor = "let cell of grid; let i = index" [id] = "'cell-' + i % this.ROWS + '-' + i % this.COLS" appMaze [cellNumber] = "i" ></div>
+
+    
+    
 </div>

@@ -20,8 +20,10 @@
   .cell{
     background-color: rgb(215, 212, 212);
     border-style: solid;
-    width: 3vw;
-    height: 5vh;
+    border-width: 1px;
+    width: 20px;
+    height: 20px;
+    user-select: none;
   }
 
   .cell:hover{

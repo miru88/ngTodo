@@ -20,7 +20,8 @@ import { todoReducer } from './to-do/store/to-do.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { TodoEffects } from './to-do/to-do.effects';
 import { PathFinderComponent } from './path-finder/path-finder.component';
-import {PathFinderModule} from './path-finder/path-finder.module'
+import {PathFinderModule} from './path-finder/path-finder.module';
+import { MazeDirective } from './maze.directive'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import {PathFinderModule} from './path-finder/path-finder.module'
     UserComponent,
     LoginComponent,
     HomeComponent,
-    PathFinderComponent
+    PathFinderComponent,
+    MazeDirective
   ],
   imports: [
     PathFinderModule,
