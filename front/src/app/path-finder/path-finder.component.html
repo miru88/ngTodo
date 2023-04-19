@@ -1,8 +1,10 @@
-stuff
-<div class = "grid" style = "width: 100vw; height: 100vh;">
 
-    <div class = "cell" *ngFor = "let cell of grid; let i = index" [id] = "'cell-' + i % this.ROWS + '-' + i % this.COLS" appMaze [cellNumber] = "i" ></div>
+<div class = "grid" style = "width: 90vw; height: 90vh;">
+    <div class = "cell"
+        *ngFor = "let cell of grid; let i = index"
+        [id] = "'cell-' + this.grid[i].x + '-' + this.grid[i].y" 
+        appMaze [cell] = "this.grid[i]"
+        [mousedown] = "this.mouseDown"
+        ></div>
 
-    
-    
 </div>
