@@ -39,13 +39,18 @@ export class PathFinderComponent implements OnInit{
     this.subscribeToMouseDownObservable();
     this.subscribeToMouseUpObservable();
 
-    for (let col in this.grid) {
-      let j = parseInt(col) % this.COLS;
-      this.grid[col] = {...this.grid[col], x: parseInt(col), y: j }
+    for (let i = 0; i< (this.COLS * this.ROWS); i++) {
+      let col = Math.floor(i%this.COLS);
+      let row = Math.floor(i/this.COLS);
+      
+      this.grid[i] = {...this.grid[i], x: row, y: col }
     }
-
-
+    console.log(this.grid);
+    
   }
+
+ 
+
   private subscribeToMouseDownObservable() {
     this.mouseDownObservable.subscribe(() => { 
     if (!this.mouseDown){
