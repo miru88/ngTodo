@@ -40,8 +40,8 @@ import { MazeDirective } from './maze.directive'
     AppRoutingModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
-      {path: 'home', component: HomeComponent},
-      {path: 'pathFinder', component: PathFinderComponent},
+      {path: 'pathFinder', component: HomeComponent},
+      {path: 'home', component: PathFinderComponent},
       {path: '', component: HomeComponent},
 
     ]),
