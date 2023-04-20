@@ -12,8 +12,6 @@ export class MazeDirective {
     
    }
 
-   
-
    @HostListener('mouseenter') onMoustDown(){
       if(this.mousedown) {
         this.el.nativeElement.style.backgroundColor = 'yellow';
@@ -29,9 +27,11 @@ export class MazeDirective {
       this.el.nativeElement.style.top = (this.cell.x * 22+ 150).toString() + 'px';
 
     }
-    
 
+   }
 
+   onCellUpdate(value: Cell) {
+      this.cellUpdate.emit(value);
    }
 
 }

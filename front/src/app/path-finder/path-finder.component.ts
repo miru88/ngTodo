@@ -9,6 +9,7 @@ import * as helpers from './index'
   styleUrls: ['./path-finder.component.scss']
 })
 export class PathFinderComponent implements OnInit{
+  
     mouseDownObservable: Observable<Event> = fromEvent(document,'mousedown');
     mouseUpObservable: Observable<Event> = fromEvent(document,'mouseup');
 
@@ -31,8 +32,8 @@ export class PathFinderComponent implements OnInit{
                                                           "isWall": false,
                                                           "isStart": false,
                                                           "isEnd": false});
-    // constructor(@Inject(DOCUMENT) document: Document){ }
-
+    
+    //constructor(@Inject(DOCUMENT) document: Document){ }
   
 
   ngOnInit(): void {
@@ -45,7 +46,7 @@ export class PathFinderComponent implements OnInit{
       
       this.grid[i] = {...this.grid[i], x: row, y: col }
     }
-    console.log(this.grid);
+    //console.log(this.grid);
     
   }
 
