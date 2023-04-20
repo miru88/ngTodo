@@ -22,6 +22,8 @@ import { TodoEffects } from './to-do/to-do.effects';
 import { PathFinderComponent } from './path-finder/path-finder.component';
 import {PathFinderModule} from './path-finder/path-finder.module';
 import { MazeDirective } from './maze.directive'
+import { NodeComponent } from './node/node.component';
+import { NodeModule } from './node/node.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,10 +32,12 @@ import { MazeDirective } from './maze.directive'
     LoginComponent,
     HomeComponent,
     PathFinderComponent,
-    MazeDirective
+    MazeDirective,
+    NodeComponent
   ],
   imports: [
     PathFinderModule,
+    NodeModule,
     StoreModule,
     HomeModule,
     BrowserModule,

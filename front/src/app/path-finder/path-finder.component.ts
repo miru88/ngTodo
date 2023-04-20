@@ -50,7 +50,9 @@ export class PathFinderComponent implements OnInit{
     
   }
 
- 
+//   onCellUpdate(value: Cell) {
+//     this.grid[value.index] = {...value}
+//  }
 
   private subscribeToMouseDownObservable() {
     this.mouseDownObservable.subscribe(() => { 

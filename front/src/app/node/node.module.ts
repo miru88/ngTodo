@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CellComponent } from './cell.component';
+import { NodeComponent } from './node.component';
 
 
 
 @NgModule({
   declarations: [
-    CellComponent
+    
   ],
   imports: [
     CommonModule
   ]
 })
-export class CellModule { }
+export class NodeModule { }
