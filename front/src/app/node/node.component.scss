@@ -1,0 +1,20 @@
+.cell{
+    background-color: rgb(215, 212, 212);
+    border-style: solid;
+    border-width: 1px;
+    width: 20px;
+    height: 20px;
+    user-select: none;
+  }
+
+  .startNode {
+    background-color: #025113;
+  }
+
+  .endNode {
+    background-color: #01106f;
+  }
+
+  .wallNode {
+    background-color: rgb(200, 5, 5);
+  }
