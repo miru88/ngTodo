@@ -24,7 +24,7 @@ export class PathFinderComponent implements OnInit{
     endCell: Cell|null = null;
     solution: Cell[]|null = null;
 
-    ROWS:number = 10;
+    ROWS:number = 20;
     COLS:number = 20;
     grid: Cell[] = new Array(this.COLS * this.ROWS).fill({"x": -1,
                                                           "y": -1,

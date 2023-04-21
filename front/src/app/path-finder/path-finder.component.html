@@ -7,11 +7,22 @@
             appMaze [cell] = "this.grid[i]"
             [mousedown] = "this.mouseDown"
             ></div> -->
-        <app-node
+        <!-- <app-node
         *ngFor = "let node of grid; let i = index"
         [id] = "'node-' + this.grid[i].x + '-' + this.grid[i].y"
-        appMaze [cell] = "this.grid[i]"
-        [isWall] = "true"  ></app-node>
+        [isWall] = "true"  ></app-node> -->
+        <!-- [id] = "'node-' + this.grid[i+(j*this.COLS)].x + '-' + this.grid[i+(j*this.COLS)].y" -->
+        <div class = "vertContainer">
+            <div
+                class = "horzContainer"
+                *ngFor = "let row of [].constructor(this.ROWS); let j = index"
+        >
+                <app-node
+                    *ngFor = "let node of [].constructor(this.COLS); let i = index"
+                    [isWall] = "true"  >
+                </app-node>
+            </div>
+        </div>
     </div>
 
 

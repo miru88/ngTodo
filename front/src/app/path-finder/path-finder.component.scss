@@ -1,28 +1,23 @@
 .pathFinderContainer {
-  display: grid;
-  grid-template-columns: auto auto;
   
 }
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  width: 450px;
-  height: 10vh;
-  border-left: 1px solid rebeccapurple;
+  border-top: 1px solid #6d95d6;
+  
 }
 .vertContainer{
-    width: 100%;
-    border-style: solid;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+  width: 100%;
+  border-style: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
       
   }
   
   .horzContainer{
       display: flex;
       flex-direction: row;
-      align-items: center;
+      border-left: 1px solid #6d95d6;
       
       
   }
