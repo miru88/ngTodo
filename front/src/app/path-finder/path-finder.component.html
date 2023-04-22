@@ -19,7 +19,10 @@
         >
                 <app-node
                     *ngFor = "let node of [].constructor(this.COLS); let i = index"
-                    [isWall] = "true"  >
+                    [isStart] = ""
+                    [isEnd] = ""
+                    [mouseDown] = "this.mouseDown"
+                    [isWall] = "false"  >
                 </app-node>
             </div>
         </div>
