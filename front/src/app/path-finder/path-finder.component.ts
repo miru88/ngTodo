@@ -58,7 +58,7 @@ export class PathFinderComponent implements OnInit{
     this.mouseDownObservable.subscribe(() => { 
     if (!this.mouseDown){
       this.mouseDown = true;
-      
+      //console.log(this.mouseDown)
     }
   
   })
@@ -69,6 +69,7 @@ export class PathFinderComponent implements OnInit{
     this.mouseUpObservable.subscribe(() => { 
     if (this.mouseDown){
       this.mouseDown = false;
+      //console.log(this.mouseDown)
     }
     
   })
