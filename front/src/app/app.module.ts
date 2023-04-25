@@ -24,6 +24,7 @@ import {PathFinderModule} from './path-finder/path-finder.module';
 import { MazeDirective } from './maze.directive'
 import { NodeComponent } from './node/node.component';
 import { NodeModule } from './node/node.module';
+import { PathFinderService } from './path-finder/path-finder.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +61,7 @@ import { NodeModule } from './node/node.module';
     EffectsModule.forRoot([TodoEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
-  providers: [HttpService],
+  providers: [HttpService,PathFinderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

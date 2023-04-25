@@ -7,3 +7,10 @@ export function parseCellId(id: string): {x: number,y:number} {
 
     return {"x":+ids[0], "y": +ids[1]}
 }
+
+export const gridState = {
+    IDLE: 'IDLE',
+    WALL: 'WALL',
+    START: 'START',
+    END: 'END'
+}

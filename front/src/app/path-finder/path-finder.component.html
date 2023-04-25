@@ -17,12 +17,16 @@
                 class = "horzContainer"
                 *ngFor = "let row of [].constructor(this.ROWS); let j = index"
         >
-                <app-node
+                <app-node 
                     *ngFor = "let node of [].constructor(this.COLS); let i = index"
-                    [isStart] = ""
-                    [isEnd] = ""
+                    (gridIndexChange) = "this.handleLeftClick($event)"
+                    (updateGrid) = "this.handleUpdateGrid()"
                     [mouseDown] = "this.mouseDown"
-                    [isWall] = "false"  >
+                    [isWall] = "false"
+                    [gridIndex] = "i+(j*this.COLS)"
+                    [x] = "i"
+                    [y] = "j"
+                    [state] = "this.state" >
                 </app-node>
             </div>
         </div>
